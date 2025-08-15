@@ -309,6 +309,19 @@ textarea {
   resize: vertical;
 }
 
+.footer{
+    background-color: #f1f1f1;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 /* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
