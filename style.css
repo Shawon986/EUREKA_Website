@@ -229,6 +229,106 @@ a{text-decoration:none }
   .btn, .hero__stats .card{ transition: none }
 }
 
+/* Button styling (reuse from your hero section if you like) */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn--primary {
+  background: linear-gradient(135deg, #ffcc61, #f39b2b);
+  color: #0b0f19;
+}
+.btn--primary:hover {
+  background: linear-gradient(135deg, #f39b2b, #ffcc61);
+}
+
+/* Modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: #000;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #000;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #f39b2b;
+  outline: none;
+}
+textarea {
+  resize: vertical;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .nav-links {
@@ -257,3 +357,5 @@ a{text-decoration:none }
     align-items: center;
   }
 }
+
+
