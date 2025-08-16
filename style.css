@@ -251,6 +251,7 @@ a{text-decoration:none }
 .btn--primary {
   background: linear-gradient(135deg, #ffcc61, #f39b2b);
   color: #0b0f19;
+  
 }
 .btn--primary:hover {
   background: linear-gradient(135deg, #f39b2b, #ffcc61);
@@ -272,7 +273,7 @@ a{text-decoration:none }
 .modal-content {
   background-color: #fff;
   margin: auto;
-  padding: 20px;
+  padding:10px 20px;
   border-radius: 10px;
   width: 90%;
   max-width: 500px;
@@ -297,6 +298,7 @@ a{text-decoration:none }
 form {
   display: flex;
   flex-direction: column;
+  margin-top: -90px;
 }
 label {
   margin: 10px 0 5px;
