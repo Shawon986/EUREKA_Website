@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+    scroll-behavior: smooth;
 }
 body {
   font-family: Arial, sans-serif;
@@ -83,6 +83,8 @@ a {
     background-color: black;
     color: #007bff;
 }
+
+
 
 /* ====== Base / tokens ====== */
 :root{
@@ -206,7 +208,13 @@ a{text-decoration:none }
   border-color: var(--border);
   color: var(--ink);
 }
-.btn--ghost:hover{ background: rgba(255,255,255,.06) }
+.btn--ghost:hover{
+     background: rgba(255,255,255,.06) ;
+    
+}
+#applyBtn:hover{
+    border-bottom: 1px solid aqua;
+}
 
 /* ====== Stats card ====== */
 .hero__stats .card{
