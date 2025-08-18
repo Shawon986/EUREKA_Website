@@ -102,17 +102,6 @@ a {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .modal-content {
-    width: 95%;
-    padding: 15px;
-  }
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-}
 
 
 
