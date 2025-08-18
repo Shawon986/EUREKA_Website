@@ -4,10 +4,20 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+    
 }
-body {
-  font-family: Arial, sans-serif;
+
+body{
+    background:
+     radial-gradient(55% 60% at 18% 20%, rgba(255,204,97,.25), transparent 60%),
+     radial-gradient(60% 65% at 85% 30%, rgba(95,208,255,.18), transparent 65%), 
+    linear-gradient(180deg, #0b0f19, #0a0d16 60%, #090c14); 
+    filter: saturate(120%);
+  z-index:-1;
+  height: 100vh;
+  
 }
+
 a {
   text-decoration: none;
   color: #333;
@@ -82,19 +92,60 @@ a {
     color: #007bff;
 }
 
-.footer{
+.products-section{
+    text-align: center;
+    padding: 150px 0;
+    
+}
+.products-section h2 {
+    margin-bottom: 30px;
+    color: white;
+}
+
+    .animated-text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 10px;
+      width: 50%;
+      margin: auto;
+      margin-bottom: 40px;
+      min-height: 80px; /* Reserve space so layout doesn't shift */
+    }
+
+    .animated-text {
+      font-size: 1.2rem;
+      color: #666;
+      opacity: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid black;
+    }
+
+    .animated-text.typing {
+      animation: blink-caret 0.8s step-end infinite;
+    }
+
+    .footer{
     background-color: #f1f1f1;
     color: black;
     padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
     position: absolute;
     bottom: 0;
-    
     width: 100%;
+    text-align: center;
 }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: rgb(0, 255, 255); }
+    }
+
+   
+
+   
+
+
 
 /* Animation */
 @keyframes fadeIn {
@@ -133,3 +184,4 @@ a {
     align-items: center;
   }
 }
+

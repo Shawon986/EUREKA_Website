@@ -29,6 +29,66 @@
     </nav>
   </header>
 
+  <section class="products-section">
+    <h2>Our Products</h2>
+    <div class="animated-text-container">
+      <p class="animated-text">We bring you the best in food and beverages.</p>
+      <p class="animated-text">Fresh, healthy, and made with love.</p>
+      <p class="animated-text">Crafted to nourish your body and delight your taste buds.</p>
+    </div>
+
+    
+  </section>
+
+  <script>
+    const cards = document.querySelectorAll('.product-card');
+    const textLines = document.querySelectorAll('.animated-text');
+
+    function typeEffect(element, text, delay, callback) {
+      let i = 0;
+      element.classList.add('typing');
+      function typing() {
+        if (i <= text.length) {
+          element.textContent = text.slice(0, i);
+          i++;
+          setTimeout(typing, 50);
+        } else {
+          if (callback) callback();
+        }
+      }
+      setTimeout(typing, delay);
+    }
+
+    function startTypingAnimation() {
+      let delay = 0;
+      textLines.forEach((line) => {
+        const fullText = line.getAttribute('data-full') || line.textContent;
+        line.setAttribute('data-full', fullText);
+        line.textContent = '';
+        typeEffect(line, fullText, delay, null);
+        delay += fullText.length * 60;
+      });
+      setTimeout(startTypingAnimation, delay + 2000);
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.classList.contains('animated-text')) {
+          startTypingAnimation();
+          observer.disconnect();
+        } else if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+    observer.observe(textLines[0]);
+  </script>
+
 
 
 
