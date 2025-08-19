@@ -6,27 +6,7 @@
   scroll-behavior: smooth;
 }
 
-body{
-    background:
-     radial-gradient(55% 60% at 18% 20%, rgba(255,204,97,.25), transparent 60%),
-     radial-gradient(60% 65% at 85% 30%, rgba(95,208,255,.18), transparent 65%), 
-    linear-gradient(180deg, #0b0f19, #0a0d16 60%, #090c14); 
-    filter: saturate(120%);
-    z-index:-1;
-    min-height: 100vh;
-    position: relative;
-    width: 100%;
-    z-index: -10000;
-    
-  
-}
-body::after{
-  content:"";
-  position:absolute; inset:auto -20% -25% -20%;
-  
-  background: radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.08), transparent 60%);
-  filter: blur(40px);
-}
+
 
 a {
   text-decoration: none;
