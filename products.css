@@ -246,6 +246,8 @@ a {
     opacity: 0;
     transform: translateY(40px);
     transition: all 1s ease;
+    background: transparent;
+    
   }
 
   .review.show {
@@ -331,13 +333,13 @@ a {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background: #ffffff;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     opacity: 0;
     transform: translateY(40px);
     transition: all 1s ease;
+    background: transparent;
   }
 
   .review-form.show {
@@ -352,6 +354,7 @@ a {
     border: 1px solid #cfd8dc;
     border-radius: 6px;
     transition: border-color 0.3s ease;
+    opacity: .9;
   }
 
   .review-form input:focus, .review-form textarea:focus {
@@ -411,6 +414,7 @@ a {
       background: #1e293b;
       transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       animation: float 3s ease-in-out infinite;
+      border: 1.1px solid aqua;
     }
 
    
