@@ -17,6 +17,8 @@ body{
     min-height: 100vh;
     position: relative;
     width: 100%;
+    z-index: -10000;
+    
   
 }
 body::after{
@@ -157,7 +159,7 @@ a {
 .products-section h1 {
     margin-bottom: 30px;
     color: white;
-    margin-top: -50px;
+    margin-top: -100px;
 }
 
  .products-grid {
@@ -251,12 +253,13 @@ a {
     }
 
     .review {
+    
     position: relative;
     padding: 30px;
     margin: 40px auto;
     width: 90%;
     max-width: 1000px;
-    background: #e0dede;
+    background: #0a2332;
     box-sizing: border-box;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -300,7 +303,7 @@ a {
   .review h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #023e8a;
+    color: #ffffff;
     font-size: 28px;
   }
 
@@ -408,6 +411,46 @@ a {
     }
   }
 
+  .social-container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    .social-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      background: #1e293b;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+   
+
+    .social-btn:hover {
+      transform: scale(1.3);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
+    .facebook:hover { background: #1877f2; box-shadow: 0 0 15px #1877f2; }
+    .twitter:hover { background: #1da1f2; box-shadow: 0 0 15px #1da1f2; }
+    .instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 15px #d6249f; }
+    .linkedin:hover { background: #0a66c2; box-shadow: 0 0 15px #0a66c2; }
+    
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
     .footer{
     background-color: #f1f1f1;
     color: black;
@@ -450,6 +493,11 @@ a {
     padding: 1rem;
     border-top: 1px solid #ddd;
     z-index: 1;
+  }
+  .paneflow-container{
+    height: 140px;
+    font-size:x-large;
+    
   }
   .nav-links a {
     padding: 0.5rem 0;

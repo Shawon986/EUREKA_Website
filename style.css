@@ -7,9 +7,11 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-body {
-  font-family: Arial, sans-serif;
+body{
+    z-index: -10000;
+
 }
+
 a {
   text-decoration: none;
   color: #333;
@@ -224,6 +226,10 @@ a{text-decoration:none }
   padding:1rem;
   display:grid; grid-template-columns: repeat(3,1fr); gap:.8rem;
   box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
 }
 .hero__stats strong{ display:block; font-size: clamp(1.1rem, 2vw, 1.6rem) }
 .hero__stats span{ color:var(--muted); font-size:.9rem }
@@ -433,6 +439,47 @@ textarea {
           padding: 15px;
         }
       }
+
+
+      .social-container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    .social-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      background: #384c6b;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+   
+
+    .social-btn:hover {
+      transform: scale(1.3);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
+    .facebook:hover { background: #1877f2; box-shadow: 0 0 15px #1877f2; }
+    .twitter:hover { background: #1da1f2; box-shadow: 0 0 15px #1da1f2; }
+    .instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 15px #d6249f; }
+    .linkedin:hover { background: #0a66c2; box-shadow: 0 0 15px #0a66c2; }
+    
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
 .footer{
     background-color: #f1f1f1;
