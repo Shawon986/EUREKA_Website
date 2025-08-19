@@ -15,7 +15,16 @@ body{
     filter: saturate(120%);
     z-index:-1;
     min-height: 100vh;
+    position: relative;
+    width: 100%;
   
+}
+body::after{
+  content:"";
+  position:absolute; inset:auto -20% -25% -20%;
+  
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.08), transparent 60%);
+  filter: blur(40px);
 }
 
 a {
@@ -98,7 +107,7 @@ a {
     padding: 150px 0;
     
 }
-.products-section h2 {
+.products-section h1 {
     margin-bottom: 30px;
     color: white;
 }
@@ -172,7 +181,7 @@ a {
       flex-direction: column;
       justify-content: space-around;
       gap: 10px;
-      width: 80%;
+      width: 60%;
       margin: auto;
       margin-bottom: 40px;
       min-height: 160px; /* Reserve space so layout doesn't shift */
@@ -183,7 +192,7 @@ a {
       font-size: 1.2rem;
       color: #666;
       opacity: 1;
-      white-space: nowrap;
+      white-space: wrap;
       overflow: hidden;
       border-right: 2px solid rgb(245, 152, 4);
     }
@@ -196,10 +205,13 @@ a {
     background-color: #f1f1f1;
     color: black;
     padding: 20px;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
     text-align: center;
+    position: relative;
+    
+
 }
 
     @keyframes blink-caret {

@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EUREKA || Trust The Flavour</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Scrolling effect styles */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.8s cubic-bezier(.23,1.02,.53,.97), transform 0.6s cubic-bezier(.23,1.02,.53,.97);
+    }
+    .scroll-in {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    /* Paneflow and product styles (from your previous code) */
+    .paneflow-container {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.2);
+      max-width: 90%;
+      margin: auto;
+      background: linear-gradient(135deg, #3290ed, #737878, #07888a, #e49605);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      overflow: hidden;
+    }
+    .paneflow-text {
+      display: inline-block;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .paneflow-text.active {
+      opacity: 1;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      margin-top: 40px;
+    }
+    .products {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 60px 20px;
+    }
+   .product {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+  transition: transform 0.35s cubic-bezier(.23,1.02,.53,.97), box-shadow 0.35s cubic-bezier(.23,1.02,.53,.97);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fixed hover effect */
+.product:hover img {
+      transform: scale(1.1) rotate(2deg);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+
+    }
+    .product:hover h3 {
+      color: #f07d09;
+      transform: translateY(-3px);
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-info h3 {
+      margin: 10px 0;
+      font-size: 1.3rem;
+      color: #333;
+    }
+    .product-info p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-weight: bold;
+      color: #ff7675;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 600px) {
+      .paneflow-container {
+        font-size: 1.5em;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
+  <header class="navbar scroll-animate">
     <div class="brand">EUREKA</div>
-
-    <!-- Hamburger Checkbox -->
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </label>
-
-    <!-- Navigation Links -->
     <nav class="nav-links">
       <a href="#">Home</a>
       <a href="./products.html" target="_blank">Products</a>
@@ -29,29 +132,23 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero scroll-animate">
     <div class="hero__bg" aria-hidden="true"></div>
-
     <div class="container hero__grid">
       <div class="hero__copy">
         <p class="eyebrow">Trust • The • Flavour</p>
-
-        <!-- Animated gradient + sheen text -->
         <h1 class="fx-text">
           EUREKA
           <span>Food & Beverage Factory</span>
         </h1>
-
         <p class="lead">
           Safe, scalable manufacturing for all kinds of goods — from pilot to national rollout.
         </p>
-
         <div class="cta">
-          <a class="btn btn--primary" href="#contact">View Products</a>
+          <a class="btn btn--primary" href="#productList">View Products</a>
           <a class="btn btn--ghost" href="#products" id="applyBtn">Apply for jobs</a>
         </div>
       </div>
-
       <aside class="hero__stats" aria-label="Key metrics">
         <div class="card">
           <div><strong>35+</strong><span>Products</span></div>
@@ -62,246 +159,132 @@
     </div>
   </section>
 
-  
-
   <!-- Modal -->
-  <div id="jobModal" class="modal">
+  <div id="jobModal" class="modal scroll-animate">
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
       <h2>Job Application Form</h2>
-
       <form id="jobForm" action="https://formspree.io/f/yourFormID" method="POST">
         <label for="fullname">Full Name</label>
         <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
-
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" placeholder="Your email" required>
-
         <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
-
         <label for="position">Position Applying For</label>
         <select id="position" name="position" required>
           <option value="">--Select Position--</option>
           <option value="production">RSM (Regional sells manager)</option>
           <option value="quality">Dealer</option>
-          
         </select>
-
         <label for="resume">Upload Resume</label>
         <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-
         <label for="message">Cover Letter</label>
         <textarea id="message" name="message" rows="4" placeholder="Write a short cover letter..."></textarea>
-
         <button type="submit" class="btn btn--primary">Submit Application</button>
       </form>
     </div>
   </div>
 
-  <title>Paneflow Text Effect</title>
-<style>
-  
+  <div class="paneflow-container scroll-animate">
+    <span class="paneflow-text">Say Hello to EUREKA</span>
+    <span class="paneflow-text">Buy Exclusive Products From Us</span>
+    <span class="paneflow-text">Contact with us</span>
+    <span class="paneflow-text">Eureka F&B Limited</span>
+  </div>
 
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+  <h2 class="scroll-animate">Our Exclusive Products</h2>
+  <div class="products" id="productList">
+    <!-- Products will be added by JavaScript -->
+  </div>
 
-  .paneflow-container {
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-    padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.2);
-    max-width: 90%;
-    margin: auto;
-    background: linear-gradient(135deg, #3290ed, #737878, #07888a, #e49605);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    overflow: hidden;
-  }
-
-  .paneflow-text {
-    display: inline-block;
-    opacity: 0;
-    transition: opacity 1s;
-  }
-
-  .paneflow-text.active {
-    opacity: 1;
-  }
-
-  @media (max-width: 600px) {
-    .paneflow-container {
-      font-size: 1.5em;
-      padding: 15px;
-    }
-  }
-</style>
-
-
-
-<div class="paneflow-container">
-  <span class="paneflow-text">Say Hello to EUREKA</span>
-  <span class="paneflow-text">Buy Exclusive Products From Us</span>
-  <span class="paneflow-text">Contact with us</span>
-  <span class="paneflow-text">Eureka F&B Limited</span>
-</div>
-
-
-<title>Eureka Product Showcase</title>
-<style>
- 
-
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  h2 {
-    text-align: center;
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    margin-top: 40px;
-  }
-
-  .products {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 60px 20px;
-  }
-
-  .product {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-
-  .product:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  }
-
-  .product img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .product-info {
-    padding: 15px;
-    text-align: center;
-  }
-
-  .product-info h3 {
-    margin: 10px 0;
-    font-size: 1.3rem;
-    color: #333;
-  }
-
-  .product-info p {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
-
-  .price {
-    font-weight: bold;
-    color: #ff7675;
-    font-size: 1.1rem;
-  }
-
-  
-</style>
-
-
-
-<h2>Our Exclusive Products</h2>
-
-<div class="products" id="productList">
-  <!-- Products will be added by JavaScript -->
-</div>
-
-
-  <footer class="footer">
+  <footer class="footer ">
     <h6>&copy; All the rights reserved by _ EUREKA FOOD AND BEVERAGE</h6>
   </footer>
 
-
-  <script src="script.js"></script>
   <script>
-  const texts = document.querySelectorAll('.paneflow-text');
-  let index = 0;
+    // Scrolling effect for all .scroll-animate elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollEls = document.querySelectorAll('.scroll-animate');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('scroll-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
 
-  function showNextText() {
-    texts.forEach((text, i) => {
-      text.classList.remove('active');
-      if(i === index) text.classList.add('active');
+      scrollEls.forEach((el, i) => {
+        el.style.transitionDelay = `${i * 0.12}s`;
+        observer.observe(el);
+      });
     });
-    index = (index + 1) % texts.length;
-  }
-
-  showNextText();
-  setInterval(showNextText, 3000); // change text every 3 seconds
-</script>
-
-<script>
-  const products = [ 
-    {
-      name: "Eureka Premium Coffee",
-      description: "Rich aroma, bold taste — perfect start to your day.",
-      price: "$12.99",
-      image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      name: "Eureka Organic Honey",
-      description: "Pure, golden, and naturally sweet from our farms.",
-      price: "$8.99",
-      image: "https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM="
-    },
-    {
-      name: "Eureka Herbal Tea",
-      description: "Relaxing blend of herbs for a calm evening.",
-      price: "$9.99",
-      image: "https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg="
+  </script>
+  <script>
+    // Paneflow text effect
+    const texts = document.querySelectorAll('.paneflow-text');
+    let index = 0;
+    function showNextText() {
+      texts.forEach((text, i) => {
+        text.classList.remove('active');
+        if(i === index) text.classList.add('active');
+      });
+      index = (index + 1) % texts.length;
     }
-  ];
-
-  const productList = document.getElementById("productList");
-
-  products.forEach(p => {
-    const productCard = document.createElement("div");
-    productCard.classList.add("product");
-
-    productCard.innerHTML = `
-      <img src="${p.image}" alt="${p.name}">
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <div class="price">${p.price}</div>
-        
-      </div>
-    `;
-
-    productList.appendChild(productCard);
-  });
-</script>
-
-
-
-    
-</body>
-</html>
+    showNextText();
+    setInterval(showNextText, 3000);
+  </script>
+  <script>
+    // Product cards with scroll effect
+    const products = [ 
+      {
+        name: "Eureka Premium Coffee",
+        description: "Rich aroma, bold taste — perfect start to your day.",
+        price: "$12.99",
+        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        name: "Eureka Organic Honey",
+        description: "Pure, golden, and naturally sweet from our farms.",
+        price: "$8.99",
+        image: "https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM="
+      },
+      {
+        name: "Eureka Herbal Tea",
+        description: "Relaxing blend of herbs for a calm evening.",
+        price: "$9.99",
+        image: "https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg="
+      }
+    ];
+    const productList = document.getElementById("productList");
+    products.forEach(p => {
+      const productCard = document.createElement("div");
+      productCard.classList.add("product", "scroll-animate");
+      productCard.innerHTML = `
+        <img src="${p.image}" alt="${p.name}">
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p>${p.description}</p>
+          <div class="price">${p.price}</div>
+        </div>
+      `;
+      productList.appendChild(productCard);
+    });
+    // Observe product cards for scroll-in effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const productCards = document.querySelectorAll('.product.scroll-animate');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('scroll-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      productCards.forEach((el, i) => {
+        el.style.transitionDelay = `${i * 0.12 + 0.5}s`;
+        observer.observe(el);
+      });
+    });
+  </script>
