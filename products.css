@@ -229,7 +229,7 @@ a {
     width: 100%;
     height: 100%;
     border: 6px solid transparent;
-    background: linear-gradient(90deg, #0077b6, #00b4d8, #f19618, #06e6f6);
+    background: linear-gradient(90deg, #12ebe7, #05b9d8, #efbd3f, #f6b30a);
     background-size: 300% 300%;
     animation: borderMove 6s linear infinite;
     -webkit-mask: 
