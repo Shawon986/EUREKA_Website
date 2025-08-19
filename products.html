@@ -39,6 +39,10 @@
       <span class="paneflow-text">Eureka F&B Limited</span>
     </div>
 
+    <div class="typing-text" style="color: white;" id="typing-text">
+  <span id="typed-content"></span>
+</div>
+
     <div class="social-container">
   <a href="https://facebook.com/yourprofile" target="_blank" class="social-btn facebook">
     <i class="fab fa-facebook-f"></i>
@@ -349,6 +353,62 @@ startTypingLoop();
       }
       showNextText();
       setInterval(showNextText, 3000);
+</script>
+
+<script>
+const text = "Follow us on social media!";
+const typingText = document.getElementById('typing-text');
+const typedContent = document.getElementById('typed-content');
+let indexs = 0;
+
+function type() {
+  if (indexs < text.length) {
+    typedContent.textContent += text.charAt(indexs);
+    indexs++;
+    typedContent.style.borderRight = 'none';
+    typedContent.style.caretColor = 'transparent';
+    setTimeout(type, 100);
+  } else {
+    removeStars();
+    createStars();
+    setTimeout(() => {
+      typedContent.textContent = '';
+      indexs = 0;
+      removeStars();
+      type();
+    }, 4200);
+  }
+}
+
+function createStars() {
+  const numStars = 30;
+  // Get the width and left offset of the typed text
+  const textWidth = typedContent.offsetWidth;
+  const textHeight = typedContent.offsetHeight;
+  const parentWidth = typingText.offsetWidth;
+  const leftOffset = (parentWidth - textWidth) / 2;
+
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement('span');
+    star.classList.add('star');
+    star.innerHTML = '✦';
+    star.style.color = '#FFD700';
+    star.style.position = 'absolute';
+    // Center stars above the text
+    star.style.left = leftOffset + Math.random() * textWidth + 'px';
+    star.style.top = Math.random() * textHeight + 'px';
+    star.style.fontSize = '10px';
+    typingText.appendChild(star);
+  }
+  typingText.style.position = 'relative';
+}
+
+function removeStars() {
+  const stars = typingText.querySelectorAll('.star');
+  stars.forEach(star => star.remove());
+}
+
+type();
 </script>
 
     

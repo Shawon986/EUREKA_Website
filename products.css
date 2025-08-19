@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-    
 }
 
 body{
@@ -108,6 +107,7 @@ a {
      
  /* Paneflow and product styles */
       .paneflow-container {
+        
         
         font-family: 'Dancing Script', cursive;
         text-align: center;
@@ -451,11 +451,40 @@ a {
       50% { transform: translateY(-10px); }
     }
 
+    .typing-text {
+      margin-top: 60px;
+      font-size: 28px;
+      height: 40px;
+      margin-bottom: 40px;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: -30px;
+    }
+
+    
+
+    .star {
+      position: absolute;
+      color: #ffcb21ff;
+      animation: star-blink 1s infinite;
+      
+      
+    }
+
+    @keyframes star-blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0; transform: scale(1.5); }
+    }
+
     .footer{
     background-color: #f1f1f1;
     color: black;
     padding: 20px;
-    /* position: fixed; */
     bottom: 0;
     width: 100%;
     text-align: center;

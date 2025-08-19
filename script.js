@@ -119,4 +119,48 @@ window.onclick = function(event) {
           observer.observe(el);
         });
       });
+
+      
+    
+
+const text = "Follow us on social media!";
+const typingText = document.getElementById('typing-text');
+let indexs = 0;
+
+function type() {
+  if (indexs < text.length) {
+    typingText.innerHTML += text.charAt(indexs);
+    indexs++;
+    typingText.style.borderRight = 'none';
+    typingText.style.caretColor = 'transparent';
+    setTimeout(type, 100);
+  } else {
+    setTimeout(() => {
+      typingText.innerHTML = '';
+      indexs = 0;
+      type();
+    }, 4200); 
+    if (!typingText.hasChildNodes() || typingText.querySelectorAll('.star').length === 0) {
+      createStars();
+    }
+  }
+}
+
+function createStars() {
+  const numStars = 30;
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement('span');
+    star.classList.add('star');
+    star.innerHTML = '✦';
+    star.style.color = '#ffcb21ff'; 
+    star.style.left = Math.random() * typingText.offsetWidth + 'px';
+    star.style.top = Math.random() * typingText.offsetHeight + 'px';
+    typingText.appendChild(star);
+  }
+}
+
+type();
+
+
+
     
