@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUREKA || Products</title>
     <link rel="stylesheet" href="./products.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -28,6 +29,13 @@
       <button class="contact">Contact</button>
     </nav>
   </header>
+
+  <div class="paneflow-container scroll-animate">
+      <span class="paneflow-text">Say Hello to EUREKA</span>
+      <span class="paneflow-text">Buy Exclusive Products From Us</span>
+      <span class="paneflow-text">Contact with us</span>
+      <span class="paneflow-text">Eureka F&B Limited</span>
+    </div>
 
  
      <section class="products-section">
@@ -308,6 +316,21 @@ startTypingLoop();
 
   // Load reviews on page load
   loadReviews();
+</script>
+
+<script>
+    // Paneflow text effect
+      const texts = document.querySelectorAll(".paneflow-text");
+      let index = 0;
+      function showNextText() {
+        texts.forEach((text, i) => {
+          text.classList.remove("active");
+          if (i === index) text.classList.add("active");
+        });
+        index = (index + 1) % texts.length;
+      }
+      showNextText();
+      setInterval(showNextText, 3000);
 </script>
 
     

@@ -34,6 +34,7 @@ a {
 
 /* Navbar Base */
 .navbar {
+  margin-bottom: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,6 +102,52 @@ a {
     background-color: black;
     color: #007bff;
 }
+  
+     
+ /* Paneflow and product styles */
+      .paneflow-container {
+        
+        font-family: 'Dancing Script', cursive;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.2);
+        max-width: 90%;
+        margin: auto;
+        background: linear-gradient(135deg, #9a6b05, #0b8181, #383b3b, #05a5e4);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        overflow: hidden;
+      }
+      .paneflow-text {
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 1s;
+      }
+      .paneflow-text.active {
+        opacity: 1;
+      }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .products-section{
     text-align: center;
@@ -110,6 +157,7 @@ a {
 .products-section h1 {
     margin-bottom: 30px;
     color: white;
+    margin-top: -50px;
 }
 
  .products-grid {
@@ -117,6 +165,7 @@ a {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 30px;
+      
     }
       .product-card {
       background: #fff;
@@ -207,7 +256,7 @@ a {
     margin: 40px auto;
     width: 90%;
     max-width: 1000px;
-    background: #ffffff;
+    background: #e0dede;
     box-sizing: border-box;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
