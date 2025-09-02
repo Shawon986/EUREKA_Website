@@ -16,12 +16,12 @@
   <section class="about-section">
     <div class="about-content">
       <h2 class="section-title">About Us</h2>
-      <p>Welcome to <strong>Flavor Haven</strong>, where passion meets taste! We specialize in crafting unforgettable food and beverage experiences, blending traditional recipes with modern culinary innovation. Our chefs carefully select fresh, organic ingredients to deliver meals that nourish the body and excite the senses.</p>
+      <p>Welcome to <strong>EUREKA FOOD AND BEVERAGE</strong>, where passion meets taste! We specialize in crafting unforgettable food and beverage experiences, blending traditional recipes with modern culinary innovation. Our chefs carefully select fresh, organic ingredients to deliver meals that nourish the body and excite the senses.</p>
       <p>Since our humble beginnings, we’ve been dedicated to creating a community around food — a place where family, friends, and flavor come together. Every sip and bite is prepared with love, ensuring quality you can trust and taste you’ll never forget.</p>
 
       <div class="about-highlights">
         <div class="highlight">
-          <h3>10+ Years</h3>
+          <h3>5+ Years</h3>
           <p>Serving authentic food and beverages with passion and care.</p>
         </div>
         <div class="highlight">
@@ -35,9 +35,36 @@
       </div>
     </div>
 
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Delicious food and drinks">
+     <div class="diagram-container">
+      <canvas id="diagram" width="300" height="300"></canvas>
+      <div class="diagram-legend">
+        <div class="legend-item"><div class="legend-color" style="background:#2ecc71"></div> Fresh Ingredients (60%)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#f39c12"></div> Customer Satisfaction (25%)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#3498db"></div> Sustainability (15%)</div>
+      </div>
     </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section scroll-animate">
+    <h2 class="section-title">Our Mission</h2>
+    <p>At Flavor Haven, our mission is simple: to bring people together through food that delights the senses and nourishes the soul. We believe every meal is a chance to create memories and strengthen bonds.</p>
+
+    <div class="mission-cards">
+      <div class="mission-card">
+        <h3>Quality</h3>
+        <p>We never compromise on the quality of our ingredients and preparation.</p>
+      </div>
+      <div class="mission-card">
+        <h3>Community</h3>
+        <p>We aim to be more than a restaurant, but a gathering place for all.</p>
+      </div>
+      <div class="mission-card">
+        <h3>Sustainability</h3>
+        <p>Committed to eco-friendly practices and supporting local farmers.</p>
+      </div>
+    </div>
+  </section>
   </section>
 
   <!-- Mission Section -->
@@ -174,6 +201,38 @@
     sections.forEach(section => {
       observer.observe(section);
     });
+
+       // Dynamic Diagram
+    const diagram = document.getElementById('diagram');
+    const dtx = diagram.getContext('2d');
+    const data = [60, 25, 15]; // Percentages
+    const labels = ["Fresh Ingredients", "Customer Satisfaction", "Sustainability"];
+    const colors = ['#2ecc71', '#f39c12', '#3498db'];
+    let currentAngle = -0.5 * Math.PI;
+    let progress = 0;
+
+    function drawDiagram() {
+      dtx.clearRect(0, 0, diagram.width, diagram.height);
+      let startAngle = currentAngle;
+
+      for (let i = 0; i < data.length; i++) {
+        const sliceAngle = (data[i] / 100) * 2 * Math.PI * progress;
+        dtx.beginPath();
+        dtx.moveTo(150, 150);
+        dtx.arc(150, 150, 120, startAngle, startAngle + sliceAngle);
+        dtx.closePath();
+        dtx.fillStyle = colors[i];
+        dtx.fill();
+        startAngle += (data[i] / 100) * 2 * Math.PI;
+      }
+
+      if (progress < 1) {
+        progress += 0.01;
+        requestAnimationFrame(drawDiagram);
+      }
+    }
+
+    drawDiagram();
   </script>
 
 </body>
