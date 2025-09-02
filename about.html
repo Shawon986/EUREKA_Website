@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Food & Beverage</title>
+  <link rel="stylesheet" href="./about.css">
+  
+    
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-content">
+      <h2 class="section-title">About Us</h2>
+      <p>Welcome to <strong>Flavor Haven</strong>, where passion meets taste! We specialize in crafting unforgettable food and beverage experiences, blending traditional recipes with modern culinary innovation. Our chefs carefully select fresh, organic ingredients to deliver meals that nourish the body and excite the senses.</p>
+      <p>Since our humble beginnings, we’ve been dedicated to creating a community around food — a place where family, friends, and flavor come together. Every sip and bite is prepared with love, ensuring quality you can trust and taste you’ll never forget.</p>
+
+      <div class="about-highlights">
+        <div class="highlight">
+          <h3>10+ Years</h3>
+          <p>Serving authentic food and beverages with passion and care.</p>
+        </div>
+        <div class="highlight">
+          <h3>Fresh & Organic</h3>
+          <p>We source only the finest natural ingredients daily.</p>
+        </div>
+        <div class="highlight">
+          <h3>5000+ Happy Customers</h3>
+          <p>Bringing joy and taste to every guest we serve.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Delicious food and drinks">
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <h2 class="section-title">Our Mission</h2>
+    <p>At Flavor Haven, our mission is simple: to bring people together through food that delights the senses and nourishes the soul. We believe every meal is a chance to create memories and strengthen bonds.</p>
+
+    <div class="mission-cards">
+      <div class="mission-card">
+        <h3>Quality</h3>
+        <p>We never compromise on the quality of our ingredients and preparation.</p>
+      </div>
+      <div class="mission-card">
+        <h3>Community</h3>
+        <p>We aim to be more than a restaurant, but a gathering place for all.</p>
+      </div>
+      <div class="mission-card">
+        <h3>Sustainability</h3>
+        <p>Committed to eco-friendly practices and supporting local farmers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <h2 class="section-title">Meet Our Team</h2>
+    <p>Behind every dish and drink is a passionate team dedicated to excellence.</p>
+
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328d7a5d" alt="Chef">
+        <h3>Chef Maria</h3>
+        <p>Head Chef with 15 years of culinary expertise.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328d7a5d" alt="Manager">
+        <h3>James Lee</h3>
+        <p>Restaurant Manager ensuring everything runs smoothly.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328d7a5d" alt="Barista">
+        <h3>Emma Smith</h3>
+        <p>Expert Barista serving love in every cup.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2 class="section-title">Get in Touch</h2>
+    <p>We’d love to hear from you! Whether it’s feedback, questions, or reservations — reach out below.</p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function createStars(count) {
+      stars = [];
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5,
+          speedX: (Math.random() - 0.5) * 0.2, // slower speed
+          speedY: (Math.random() - 0.5) * 0.2  // slower speed
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#fff';
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        star.x += star.speedX;
+        star.y += star.speedY;
+
+        if (star.x < 0) star.x = canvas.width;
+        if (star.x > canvas.width) star.x = 0;
+        if (star.y < 0) star.y = canvas.height;
+        if (star.y > canvas.height) star.y = 0;
+      }
+    }
+
+    function animate() {
+      drawStars();
+      requestAnimationFrame(animate);
+    }
+
+    createStars(250);
+    animate();
+
+    // Remove cursor after typing effect finishes
+    document.addEventListener("DOMContentLoaded", () => {
+      const titles = document.querySelectorAll(".section-title");
+      titles.forEach(title => {
+        title.addEventListener("animationend", (e) => {
+          if (e.animationName === "typing") {
+            title.classList.add("finished");
+          }
+        });
+      });
+    });
+
+    // Scroll reveal effect
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
