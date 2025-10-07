@@ -5,32 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eureka Food & Beverage | Services</title>
     <link rel="stylesheet" href="service.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <!-- ===== Navbar ===== -->
-  <header>
-    <div class="logo">Food<span style="color:#ff7b54;">&</span>Beverage</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#footer">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+ <header class="navbar scroll-animate">
+      <div class="brand">EUREKA</div> 
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="nav-links" >
+        <a href="./index.html">Home</a>
+        <a href="./products.html">Products</a>
+        <a href="./about.html">About</a>
+        <a href="#">Services</a>
+        <button class="contact">Contact</button>
+      </nav>
+    </header>
 
-  <!-- ===== Hero Section ===== -->
   <section class="hero" id="hero">
-    <h1>Welcome to <span>Eureka Food And Beverage</span></h1>
-    <p class="typing-text">Delighting your taste buds...</p>
-    <a href="#services" class="btn">Explore Our Services</a>
-  </section>
+  <div class="starfield"></div> <!-- 🔸 single container for stars -->
+
+  <h1>Eureka Food and Beverage</h1>
+  <p class="typing-text">Where taste meets creativity...</p>
+  <a href="#services" class="btn">Discover More</a>
+
+  <div class="social-container">
+  <a href="https://facebook.com/yourprofile" target="_blank" class="social-btn facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com/yourprofile" target="_blank" class="social-btn twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://instagram.com/yourprofile" target="_blank" class="social-btn instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn linkedin">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+</div>
+</section>
+ 
+
+    
+
 
   <!-- ===== Services Section ===== -->
   <section class="services" id="services">
@@ -95,28 +118,32 @@
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
 
-    // ===== Typing Effect (Looped Sentences) =====
-    const typingText = document.querySelector(".typing-text");
-    const texts = ["Delighting your taste buds...", "Crafting moments of joy...", "Serving freshness daily!"];
-    let index = 0;
+  
+    // ===== Random Star Generator =====
+const starContainer = document.querySelector(".starfield");
+const numStars = 200; // adjust for density
 
-    function typeEffect() {
-      typingText.textContent = "";
-      let charIndex = 0;
-      const currentText = texts[index];
-      const type = setInterval(() => {
-        typingText.textContent += currentText.charAt(charIndex);
-        charIndex++;
-        if (charIndex === currentText.length) {
-          clearInterval(type);
-          setTimeout(() => {
-            index = (index + 1) % texts.length;
-            typeEffect();
-          }, 2000);
-        }
-      }, 80);
-    }
-    typeEffect();
+for (let i = 0; i < numStars; i++) {
+  const star = document.createElement("div");
+  star.classList.add("star");
+  
+  // Random position
+  star.style.top = Math.random() * 100 + "%";
+  star.style.left = Math.random() * 100 + "%";
+  
+  // Random size & brightness
+  const size = Math.random() * 2 + 1; // 1–3px
+  star.style.width = `${size}px`;
+  star.style.height = `${size}px`;
+  star.style.opacity = Math.random() * 0.8 + 0.2;
+  
+  // Random animation delay for unique twinkles
+  star.style.animationDelay = Math.random() * 5 + "s";
+  
+  starContainer.appendChild(star);
+}
+
   </script>
+  
 </body>
 </html>
