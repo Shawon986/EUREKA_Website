@@ -24,7 +24,10 @@ a {
   align-items: center;
   background: #e9e8e8;
   padding: 0.8rem 1rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .brand {
   font-size: 1.2rem;
