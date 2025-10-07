@@ -192,6 +192,7 @@
       align-items: center;
       justify-content: center;
       margin-top: 60px;
+      margin-bottom: 60px;
      
     }
 
@@ -352,4 +353,8 @@
       .typing-text {
         font-size: 1rem;
       }
+    }
+
+    #factory-animation{
+        box-shadow: 0 0 10px 10px rgb(122, 123, 123);
     }
