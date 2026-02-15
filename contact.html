@@ -11,6 +11,24 @@
 
 <body>
 
+  <!-- ===== Navbar ===== -->
+ <header class="navbar scroll-animate">
+      <div class="brand">EUREKA</div> 
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="nav-links" >
+        <a href="./index.html">Home</a>
+        <a href="./products.html">Products</a>
+        <a href="./about.html">About</a>
+        <a href="./service.html">Services</a>
+        <a href="#"><button class="contact">Contact</button></a>
+      </nav>
+    </header>
+
 <button class="dark-toggle" id="darkToggle">🌙 Mode</button>
 
 <div class="form-wrapper">
@@ -45,8 +63,8 @@
 
         <div class="field full"><textarea id="message" placeholder=" " required></textarea><label>Your Opinion</label></div>
 
-        <div class="field full">
-          <input type="checkbox" id="agree"> <span style="font-size:12px">I agree to terms</span>
+        <div class="field full" style="display: flex; gap: 6px;align-items: center;">
+          <span><input type="checkbox" id="agree"></span> <span style="font-size:12px">I agree to terms</span>
           <div class="error">You must agree</div>
         </div>
 
@@ -58,8 +76,8 @@
 
   <div class="info-side">
     <h2>Let’s build something great</h2>
-    <p style="font-size:14px;opacity:.9">Mobile-ready animated contact experience with dark mode.</p>
-    <div>⚡ Fast response</div>
+    <p style="font-size:14px;opacity:.9; color: rgb(134, 184, 35);">EUREKA FOOD AND BEVERAGE</p>
+    <div>⚡ Fast moving goods</div>
     <div>🔒 Secure</div>
     <div>🎯 Tailored planning</div>
   </div>
