@@ -37,38 +37,63 @@
     <div class="form-title">Contact Us</div>
     <div class="form-subtitle">Tell us about your Opinion and we’ll respond within 24 hours.</div>
 
-    <div class="success-message" id="successMsg">Your message has been sent successfully.</div>
+    <div class="success-message" id="successMsg" style="display:none;">
+      Your message has been sent successfully.
+    </div>
 
-    <form id="contactForm" novalidate>
+    <form id="contactForm" method="post" action="https://formspree.io/f/xwkjvqgk" novalidate>
       <div class="form-grid">
 
-        <div class="field"><input type="text" id="firstName" placeholder=" " required><label>First Name</label><div class="error">Required</div></div>
-        <div class="field"><input type="text" id="lastName" placeholder=" " required><label>Last Name</label><div class="error">Required</div></div>
-        <div class="field"><input type="email" id="email" placeholder=" " required><label>Email</label><div class="error">Invalid email</div></div>
-        <div class="field"><input type="tel" id="phone" placeholder=" "><label>Phone</label></div>
+        <div class="field">
+          <input type="text" id="firstName" name="firstName" placeholder=" " required>
+          <label>First Name</label>
+          <div class="error" style="display:none;">Required</div>
+        </div>
+
+        <div class="field">
+          <input type="text" id="lastName" name="lastName" placeholder=" " required>
+          <label>Last Name</label>
+          <div class="error" style="display:none;">Required</div>
+        </div>
+
+        <div class="field">
+          <input type="email" id="email" name="email" placeholder=" " required>
+          <label>Email</label>
+          <div class="error" style="display:none;">Invalid email</div>
+        </div>
+
+        <div class="field">
+          <input type="tel" id="phone" name="phone" placeholder=" ">
+          <label>Phone</label>
+        </div>
 
         <div class="field full">
-          <select id="budget" required>
+          <select id="budget" name="rating" required>
             <option value="" selected disabled></option>
             <option>10-35</option>
             <option>35-55</option>
             <option>55-75</option>
             <option>75-100</option>
           </select>
-          <label>Your Rataings</label>
-          <div class="error">Select your ratings</div>
+          <label>Your Ratings</label>
+          <div class="error" style="display:none;">Select your ratings</div>
         </div>
 
-        
-
-        <div class="field full"><textarea id="message" placeholder=" " required></textarea><label>Your Opinion</label></div>
-
-        <div class="field full" style="display: flex; gap: 6px;align-items: center;">
-          <span><input type="checkbox" id="agree"></span> <span style="font-size:12px">I agree to terms</span>
-          <div class="error">You must agree</div>
+        <div class="field full">
+          <textarea id="message" name="message" placeholder=" " required></textarea>
+          <label>Your Opinion</label>
+          <div class="error" style="display:none;">Required</div>
         </div>
 
-        <div class="field full"><button class="btn-primary" type="submit">Send Message</button></div>
+        <div class="field full" style="display:flex; gap:6px; align-items:center;">
+          <span><input type="checkbox" id="agree" name="agree"></span>
+          <span style="font-size:12px">I agree to terms</span>
+          <div class="error" style="display:none;">You must agree</div>
+        </div>
+
+        <div class="field full">
+          <button class="btn-primary" type="submit">Send Message</button>
+        </div>
 
       </div>
     </form>
@@ -76,7 +101,7 @@
 
   <div class="info-side">
     <h2>Let’s build something great</h2>
-    <p style="font-size:14px;opacity:.9; color: rgb(134, 184, 35);">EUREKA FOOD AND BEVERAGE</p>
+    <p style="font-size:14px;opacity:.9;color:rgb(134,184,35);">EUREKA FOOD AND BEVERAGE</p>
     <div>⚡ Fast moving goods</div>
     <div>🔒 Secure</div>
     <div>🎯 Tailored planning</div>
@@ -85,56 +110,64 @@
 </div>
 
 <script>
-const form=document.getElementById('contactForm');
-const successMsg=document.getElementById('successMsg');
-const toggle=document.getElementById('darkToggle');
+const form = document.getElementById('contactForm');
+const successMsg = document.getElementById('successMsg');
 
-if(localStorage.getItem('darkMode')==='1') document.body.classList.add('dark');
-
-toggle.onclick=()=>{
-  document.body.classList.toggle('dark');
-  localStorage.setItem('darkMode',document.body.classList.contains('dark')?'1':'0');
-};
-
-// pills
-
-document.querySelectorAll('.checkbox').forEach(c=>{
-  c.onclick=()=>{
-    const i=c.querySelector('input');
-    i.checked=!i.checked;
-    c.classList.toggle('active',i.checked);
+// optional dark toggle (safe if not present)
+const toggle = document.getElementById('darkToggle');
+if (localStorage.getItem('darkMode') === '1') document.body.classList.add('dark');
+if (toggle) {
+  toggle.onclick = () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem(
+      'darkMode',
+      document.body.classList.contains('dark') ? '1' : '0'
+    );
   };
-});
-
-function emailValid(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);} 
-function err(el,show,msg){
-  const e=el.parentElement.querySelector('.error');
-  if(!e) return;
-  if(msg) e.textContent=msg;
-  e.style.display=show?'block':'none';
 }
 
-form.onsubmit=e=>{
-  e.preventDefault();
-  let ok=true;
-  const f=firstName; if(!f.value.trim()){err(f,1);ok=false;} else err(f,0);
-  const l=lastName; if(!l.value.trim()){err(l,1);ok=false;} else err(l,0);
-  const em=email; if(!emailValid(em.value)){err(em,1);ok=false;} else err(em,0);
-  const b=budget; if(!b.value){err(b,1);ok=false;} else err(b,0);
-  const m=message; if(!m.value.trim()){err(m,1);ok=true;} else err(m,0);
+function emailValid(v){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
 
-  const agree=document.getElementById('agree');
-  const agreeErr=agree.parentElement.querySelector('.error');
-  if(!agree.checked){agreeErr.style.display='block'; ok=false;} else agreeErr.style.display='none';
+function err(input, show){
+  const e = input.parentElement.querySelector('.error');
+  if (e) e.style.display = show ? 'block' : 'none';
+}
 
-  if(!ok) return;
+form.addEventListener('submit', function(e){
 
-  successMsg.style.display='block';
-  successMsg.scrollIntoView({behavior:'smooth'});
-  form.reset();
-  document.querySelectorAll('.checkbox').forEach(c=>c.classList.remove('active'));
-};
+  let ok = true;
+
+  const firstName = document.getElementById('firstName');
+  const lastName  = document.getElementById('lastName');
+  const email     = document.getElementById('email');
+  const budget    = document.getElementById('budget');
+  const message   = document.getElementById('message');
+  const agree     = document.getElementById('agree');
+
+  if (!firstName.value.trim()){ err(firstName,true); ok=false; } else err(firstName,false);
+  if (!lastName.value.trim()){ err(lastName,true); ok=false; } else err(lastName,false);
+  if (!emailValid(email.value)){ err(email,true); ok=false; } else err(email,false);
+  if (!budget.value){ err(budget,true); ok=false; } else err(budget,false);
+  if (!message.value.trim()){ err(message,true); ok=false; } else err(message,false);
+
+  const agreeErr = agree.closest('.field').querySelector('.error');
+  if (!agree.checked){ agreeErr.style.display='block'; ok=false; }
+  else agreeErr.style.display='none';
+
+  // stop submit only if invalid — otherwise Formspree will receive it
+  if (!ok){
+    e.preventDefault();
+    return;
+  }
+
+  // show success message (Formspree will still submit)
+  successMsg.style.display = 'block';
+});
 </script>
+
+
 
 </body>
 </html>
