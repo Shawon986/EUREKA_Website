@@ -413,6 +413,12 @@ body {
     .footer-section {
       flex: 1 1 300px;
       margin: 10px;
+      text-align: center;
+    }
+
+     .footer-section h2{
+      font-size: 52px;
+      
     }
 
     .footer-section h2,
