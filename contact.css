@@ -9,12 +9,21 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+    height: 75px;
     
 }
 .brand {
   font-size: 1.2rem;
   font-weight: bold;
   color: black;
+}
+.brand {
+  width: 180px;
+  
+}
+.brand img {
+  width: 100%;
+  height: 180px;
 }
 .nav-links {
   display: flex;
@@ -240,8 +249,8 @@ footer {
     }
     
 :root {
-  --bg1:#667eea;
-  --bg2:#764ba2;
+  --bg1:#cccbcb;
+  --bg2:#b7b7b7;
   --panel:#ffffff;
   --text:#111827;
   --muted:#6b7280;
