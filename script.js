@@ -96,6 +96,8 @@ window.onclick = function(event) {
           <div class="price">${p.price}</div>
         </div>
       `;
+      
+
         productList.appendChild(productCard);
       });
       // Observe product cards for scroll-in effect
