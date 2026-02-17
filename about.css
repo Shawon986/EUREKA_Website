@@ -17,8 +17,11 @@ body {
   align-items: center;
   background: #e9e8e8;
   padding: 0.8rem 1rem;
-  position: relative;
-  height: 50px;
+  position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+  
 }
 .brand {
   font-size: 1.2rem;
@@ -37,6 +40,7 @@ body {
 .nav-links {
   display: flex;
   gap: 1rem;
+  
 }
 .nav-links a {
   padding: 0.5rem 0.8rem;

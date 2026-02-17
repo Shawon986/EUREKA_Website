@@ -7,9 +7,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-body{
-  /* remove negative z-index so page content isn't pushed beneath fixed elements */
-}
+
 
 a {
   text-decoration: none;

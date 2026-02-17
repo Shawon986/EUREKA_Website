@@ -1,459 +1,542 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EUREKA || Products</title>
-    <link rel="stylesheet" href="./products.css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./products.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand">
+        <img
+          src="./assets/WhatsApp_Image_2026-02-16_at_9.38.04_PM-removebg-preview.png"
+          alt=""
+        />
+      </div>
 
-</head>
-<body>
+      <div class="galaxy" id="galaxy"></div>
 
+      <!-- Hamburger Checkbox -->
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="#productList">Products</a>
+        <a href="./about.html">About</a>
+        <a href="./service.html">Services</a>
+        <a href="./contact.html"><button class="contact">Contact</button></a>
+      </nav>
+    </header>
 
-      <header class="navbar">
-    <div class="brand"><img src="./assets/WhatsApp_Image_2026-02-16_at_9.38.04_PM-removebg-preview.png" alt=""></div>
+    <main class="site-main">
 
-    <div class="galaxy" id="galaxy"></div>
-
-    <!-- Hamburger Checkbox -->
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
-    <!-- Navigation Links -->
-    <nav class="nav-links">
-      <a href="./index.html">Home</a>
-      <a href="#productList">Products</a>
-      <a href="./about.html">About</a>
-      <a href="./service.html">Services</a>
-      <a href="./contact.html"><button class="contact">Contact</button></a>
-    </nav>
-  </header>
-
-  <div class="paneflow-container scroll-animate">
+    <div class="paneflow-container scroll-animate">
       <span class="paneflow-text">Say Hello to EUREKA</span>
       <span class="paneflow-text">Buy Exclusive Products From Us</span>
       <span class="paneflow-text">Contact with us</span>
       <span class="paneflow-text">Eureka F&B Limited</span>
     </div>
 
-    <div class="typing-text" style="color: white;" id="typing-text">
-  <span id="typed-content"></span>
-</div>
+    <div class="typing-text" style="color: white" id="typing-text">
+      <span id="typed-content"></span>
+    </div>
 
     <div class="social-container">
-  <a href="https://facebook.com/yourprofile" target="_blank" class="social-btn facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://twitter.com/yourprofile" target="_blank" class="social-btn twitter">
-    <i class="fab fa-twitter"></i>
-  </a>
-  <a href="https://instagram.com/yourprofile" target="_blank" class="social-btn instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn linkedin">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-  
-</div>
-
- 
-     <section class="products-section">
-    <h1>Our Products</h1>
-    <div class="animated-text-container">
-      <p class="animated-text">We bring you the best in food and beverages.</p>
-      <p class="animated-text">Fresh, healthy, and made with love.</p>
-      <p class="animated-text">Crafted to nourish your body and delight your taste buds.</p>
+      <a
+        href="https://facebook.com/yourprofile"
+        target="_blank"
+        class="social-btn facebook"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a
+        href="https://twitter.com/yourprofile"
+        target="_blank"
+        class="social-btn twitter"
+      >
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a
+        href="https://instagram.com/yourprofile"
+        target="_blank"
+        class="social-btn instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://linkedin.com/in/yourprofile"
+        target="_blank"
+        class="social-btn linkedin"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
     </div>
 
-     <div class="products-grid">
-      <div class="product-card">
-        <img src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg=">
-        <h3>Fresh Orange Juice</h3>
-        <p>100% natural, freshly squeezed orange juice with no added sugar.</p>
-      </div>
+    <section class="products-section">
+      <h1>Our Products</h1>
 
-      <div class="product-card">
-        <img src="https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM=">
-        <h3>Healthy Snack Bars</h3>
-        <p>Delicious and nutritious bars made with oats, nuts, and honey.</p>
-      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img
+            src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg="
+          />
+          <h3>Fresh Orange Juice</h3>
+          <p>
+            100% natural, freshly squeezed orange juice with no added sugar.
+          </p>
+        </div>
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
-        <h3>Premium Coffee</h3>
-        <p>Rich and aromatic coffee beans sourced from the best farms.</p>
-      </div>
+        <div class="product-card">
+          <img
+            src="https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM="
+          />
+          <h3>Healthy Snack Bars</h3>
+          <p>Delicious and nutritious bars made with oats, nuts, and honey.</p>
+        </div>
 
-      <div class="product-card">
-        <img src= "https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM=">
-        <h3>Organic Green Tea</h3>
-        <p>Refreshing and healthy green tea with antioxidants for wellness.</p>
-      </div>
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+          />
+          <h3>Premium Coffee</h3>
+          <p>Rich and aromatic coffee beans sourced from the best farms.</p>
+        </div>
 
-      <div class="product-card">
-        <img src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg=">
-        <h3>Berry Smoothie</h3>
-        <p>A blend of fresh berries, yogurt, and honey for a healthy treat.</p>
-      </div>
+        <div class="product-card">
+          <img
+            src="https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM="
+          />
+          <h3>Organic Green Tea</h3>
+          <p>
+            Refreshing and healthy green tea with antioxidants for wellness.
+          </p>
+        </div>
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
-        <h3>Mineral Water</h3>
-        <p>Pure and refreshing mineral water sourced from natural springs.</p>
-      </div>
+        <div class="product-card">
+          <img
+            src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg="
+          />
+          <h3>Berry Smoothie</h3>
+          <p>
+            A blend of fresh berries, yogurt, and honey for a healthy treat.
+          </p>
+        </div>
 
-      <div class="product-card">
-        <img src="https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM=">
-        <h3>Crunchy Veggie Chips</h3>
-        <p>Light and crispy chips made from real vegetables with no preservatives.</p>
-      </div>
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+          />
+          <h3>Mineral Water</h3>
+          <p>Pure and refreshing mineral water sourced from natural springs.</p>
+        </div>
 
-      <div class="product-card">
-        <img src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg=">
-        <h3>Organic Milk</h3>
-        <p>Fresh organic milk from grass-fed cows, rich in nutrients.</p>
-      </div>
+        <div class="product-card">
+          <img
+            src="https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM="
+          />
+          <h3>Crunchy Veggie Chips</h3>
+          <p>
+            Light and crispy chips made from real vegetables with no
+            preservatives.
+          </p>
+        </div>
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
-        <h3>Homemade Cookies</h3>
-        <p>Crunchy, buttery cookies baked with love and the finest ingredients.</p>
-      </div>
+        <div class="product-card">
+          <img
+            src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg="
+          />
+          <h3>Organic Milk</h3>
+          <p>Fresh organic milk from grass-fed cows, rich in nutrients.</p>
+        </div>
 
-      <div class="product-card">
-        <img src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg=">
-        <h3>Homemade Cookies</h3>
-        <p>Crunchy, buttery cookies baked with love and the finest ingredients.</p>
-      </div>
-      
-    </div>
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+          />
+          <h3>Homemade Cookies</h3>
+          <p>
+            Crunchy, buttery cookies baked with love and the finest ingredients.
+          </p>
+        </div>
 
+        <div class="product-card">
+          <img
+            src="https://media.istockphoto.com/id/2050813190/photo/a-cup-of-tea-with-dry-fruit-flowers-and-herbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=MEWppr6G06a5BHTXcAm21yp7LjshuOwXUo8zRHpAyGg="
+          />
+          <h3>Homemade Cookies</h3>
+          <p>
+            Crunchy, buttery cookies baked with love and the finest ingredients.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="review" id="reviewSection">
-  <h2>Customer Reviews</h2>
-  <div class="reviews-list" id="reviewsList">
-    <div class="review-item">
-      
-    </div>
-  </div>
-</section>
+      <h2>Customer Reviews</h2>
+      <div class="reviews-list" id="reviewsList">
+        <div class="review-item"></div>
+      </div>
+    </section>
 
-<form class="review-form" id="reviewForm">
-  <input type="text" id="reviewName" placeholder="Your name" required>
-  <textarea id="reviewInput" rows="4" placeholder="Write your review here..." required></textarea>
-  <button type="submit">Submit Review</button>
-</form>
+    <form class="review-form" id="reviewForm">
+      <input type="text" id="reviewName" placeholder="Your name" required />
+      <textarea
+        id="reviewInput"
+        rows="4"
+        placeholder="Write your review here..."
+        required
+      ></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
 
+    </main>
 
-
-
-   <footer>
+    <footer>
       <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section about">
+          <div class="footerLogo">
+            <img
+              src="./assets/WhatsApp_Image_2026-02-16_at_9.38.04_PM-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <p>
+            We provide quality services and solutions. Contact us for more
+            details and stay connected through our social channels.
+          </p>
+          <div class="social-icons">
+            <a href="#">🌐</a>
+            <a href="#">🐦</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+          </div>
+        </div>
 
-    <!-- About Section -->
-    <div class="footer-section about">
-      <div class="footerLogo">
-        <img src="./assets/WhatsApp_Image_2026-02-16_at_9.38.04_PM-removebg-preview.png" alt="">
+        <!-- Contact Details -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>📍 123 Main Street, City, Country</li>
+            <li>📞 +1 234 567 890</li>
+            <li>✉️ contact@mywebsite.com</li>
+          </ul>
+          <h4>Business Hours</h4>
+          <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+        </div>
+
+        <!-- Map Section -->
+        <div class="footer-section">
+          <h3>Our Location</h3>
+          <div class="map-container">
+            <iframe
+              width="100%"
+              height="650px"
+              frameborder="0"
+              style="border: 0"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ashulia%20Bazar%2C%20N511%2C%20Ashulia%2C%20Bangladesh&maptype=roadmap"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
       </div>
-      <p>We provide quality services and solutions. Contact us for more details and stay connected through our social channels.</p>
-      <div class="social-icons">
-        <a href="#">🌐</a>
-        <a href="#">🐦</a>
-        <a href="#">📘</a>
-        <a href="#">📸</a>
-      </div>
-    </div>
 
-    <!-- Contact Details -->
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <ul>
-        <li>📍 123 Main Street, City, Country</li>
-        <li>📞 +1 234 567 890</li>
-        <li>✉️ contact@mywebsite.com</li>
-      </ul>
-      <h4>Business Hours</h4>
-      <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-    </div>
+      <div class="footer-bottom">&copy; 2025 EUREKA. All rights reserved.</div>
+    </footer>
 
-    <!-- Map Section -->
-    <div class="footer-section">
-      <h3>Our Location</h3>
-      <div class="map-container">
-        <iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ashulia%20Bazar%2C%20N511%2C%20Ashulia%2C%20Bangladesh&maptype=roadmap" allowfullscreen></iframe>
-      </div>
-    </div>
+    <style>
+      /* Galaxy star background */
+      body {
+        margin: 0;
+        height: 100%;
+        background: radial-gradient(
+          ellipse at bottom,
+          #1b2735 0%,
+          #090a0f 100%
+        );
+      }
 
-  </div>
+      .galaxy {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+        pointer-events: none; 
+      }
 
-  <div class="footer-bottom">
-    &copy; 2025 EUREKA. All rights reserved.
-  </div>
-</footer>
+      .galaxy span {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: drift linear infinite;
+      }
 
+      @keyframes drift {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0.8;
+        }
+        25% {
+          transform: translateY(-30px) translateX(15px);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(-60px) translateX(-15px);
+          opacity: 0.9;
+        }
+        75% {
+          transform: translateY(-90px) translateX(15px);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-120px) translateX(-15px);
+          opacity: 0.8;
+        }
+      }
 
-  <style>
-  /* Galaxy star background */
-  body {
-    margin: 0;
-    height: 100vh;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  }
+      @media (max-width: 768px) {
+        .galaxy span {
+          width: 1.5px !important;
+          height: 1.5px !important;
+        }
+      }
+    </style>
 
-  .galaxy {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -1;
-    pointer-events: none; /* keep elements clickable */
-  }
+    <div class="galaxy" id="galaxy"></div>
 
-  .galaxy span {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: drift linear infinite;
-  }
+    <script>
+      function generateGalaxy() {
+        const galaxy = document.getElementById("galaxy");
+        const numStars = 100;
 
-  @keyframes drift {
-    0% { transform: translateY(0) translateX(0); opacity: 0.8; }
-    25% { transform: translateY(-30px) translateX(15px); opacity: 0.6; }
-    50% { transform: translateY(-60px) translateX(-15px); opacity: 0.9; }
-    75% { transform: translateY(-90px) translateX(15px); opacity: 0.6; }
-    100% { transform: translateY(-120px) translateX(-15px); opacity: 0.8; }
-  }
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement("span");
+          const size = Math.random() * 3 + 1;
+          star.style.width = size + "px";
+          star.style.height = size + "px";
+          star.style.left = Math.random() * window.innerWidth + "px";
+          star.style.top = Math.random() * window.innerHeight + "px";
+          star.style.animationDuration = Math.random() * 20 + 10 + "s";
 
-  @media (max-width: 768px) {
-    .galaxy span {
-      width: 1.5px !important;
-      height: 1.5px !important;
-    }
-  }
-</style>
+          galaxy.appendChild(star);
+        }
+      }
 
-<div class="galaxy" id="galaxy"></div>
+      generateGalaxy();
+    </script>
 
-<script>
-  function generateGalaxy() {
-    const galaxy = document.getElementById('galaxy');
-    const numStars = 100;
+    <script>
+      const cards = document.querySelectorAll(".product-card");
+      const textLines = document.querySelectorAll(".animated-text");
 
-    for (let i = 0; i < numStars; i++) {
-      const star = document.createElement('span');
-      const size = Math.random() * 3 + 1;
-      star.style.width = size + 'px';
-      star.style.height = size + 'px';
-      star.style.left = Math.random() * window.innerWidth + 'px';
-      star.style.top = Math.random() * window.innerHeight + 'px';
-      star.style.animationDuration = (Math.random() * 20 + 10) + 's';
+      // Typing effect
+      function typeEffect(element, text, callback) {
+        let i = 0;
+        element.classList.add("typing");
+        function typing() {
+          if (i <= text.length) {
+            element.textContent = text.slice(0, i);
+            i++;
+            setTimeout(typing, 50);
+          } else {
+            if (callback) callback();
+          }
+        }
+        typing();
+      }
 
-      galaxy.appendChild(star);
-    }
-  }
+      function startTypingLoop() {
+        let index = 0;
 
-  generateGalaxy();
-</script>
+        function nextLine() {
+          const line = textLines[index];
+          const fullText = line.getAttribute("data-full") || line.textContent;
+          line.setAttribute("data-full", fullText);
+          line.textContent = "";
+          typeEffect(line, fullText, () => {
+            setTimeout(() => {
+              index = (index + 1) % textLines.length;
+              nextLine();
+            }, 2000);
+          });
+        }
 
-
-  <script>
-const cards = document.querySelectorAll('.product-card');
-const textLines = document.querySelectorAll('.animated-text');
-
-// Typing effect
-function typeEffect(element, text, callback) {
-  let i = 0;
-  element.classList.add('typing');
-  function typing() {
-    if (i <= text.length) {
-      element.textContent = text.slice(0, i);
-      i++;
-      setTimeout(typing, 50);
-    } else {
-      if (callback) callback();
-    }
-  }
-  typing();
-}
-
-function startTypingLoop() {
-  let index = 0;
-
-  function nextLine() {
-    const line = textLines[index];
-    const fullText = line.getAttribute('data-full') || line.textContent;
-    line.setAttribute('data-full', fullText);
-    line.textContent = '';
-    typeEffect(line, fullText, () => {
-      setTimeout(() => {
-        index = (index + 1) % textLines.length;
         nextLine();
-      }, 2000);
-    });
-  }
+      }
 
-  nextLine();
-}
+      // Product card scroll animation
+      const cardObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              cardObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
 
-// Product card scroll animation
-const cardObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      cardObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-cards.forEach((card, index) => {
-  card.style.animationDelay = `${index * 0.2}s`;
-  cardObserver.observe(card);
-});
-
-startTypingLoop();
-</script>
-
-<script>
-  const reviewForm = document.getElementById('reviewForm');
-  const reviewInput = document.getElementById('reviewInput');
-  const reviewName = document.getElementById('reviewName');
-  const reviewsList = document.getElementById('reviewsList');
-
-  // Set your admin password here
-  const ADMIN_PASSWORD = "eurekaadmin"; // Change this to your secret password
-
-  // Track admin login status
-  let isAdmin = false;
-
-  // Load reviews from localStorage
-  function loadReviews() {
-    const saved = localStorage.getItem('eurekaReviews');
-    reviewsList.innerHTML = ""; // Clear existing
-    if (saved) {
-      const reviews = JSON.parse(saved);
-      reviews.forEach((r, idx) => {
-        addReviewToDOM(r.name, r.text, idx);
+      cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+        cardObserver.observe(card);
       });
-    }
-    // If admin, show remove buttons
-    if (isAdmin) {
-      const buttons = document.querySelectorAll('.remove-review');
-      buttons.forEach(btn => btn.style.display = 'inline-block');
-    } else {
-      const buttons = document.querySelectorAll('.remove-review');
-      buttons.forEach(btn => btn.style.display = 'none');
-    }
-  }
 
-  // Save reviews to localStorage
-  function saveReviewsArray(reviews) {
-    localStorage.setItem('eurekaReviews', JSON.stringify(reviews));
-  }
+      startTypingLoop();
+    </script>
 
-  // Add review to DOM with remove button (always present, but hidden for non-admin)
-  function addReviewToDOM(name, text, idx) {
-    const newReview = document.createElement('div');
-    newReview.classList.add('review-item');
-    newReview.innerHTML = `
+    <script>
+      const reviewForm = document.getElementById("reviewForm");
+      const reviewInput = document.getElementById("reviewInput");
+      const reviewName = document.getElementById("reviewName");
+      const reviewsList = document.getElementById("reviewsList");
+
+      // Set your admin password here
+      const ADMIN_PASSWORD = "eurekaadmin"; // Change this to your secret password
+
+      // Track admin login status
+      let isAdmin = false;
+
+      // Load reviews from localStorage
+      function loadReviews() {
+        const saved = localStorage.getItem("eurekaReviews");
+        reviewsList.innerHTML = ""; // Clear existing
+        if (saved) {
+          const reviews = JSON.parse(saved);
+          reviews.forEach((r, idx) => {
+            addReviewToDOM(r.name, r.text, idx);
+          });
+        }
+        // If admin, show remove buttons
+        if (isAdmin) {
+          const buttons = document.querySelectorAll(".remove-review");
+          buttons.forEach((btn) => (btn.style.display = "inline-block"));
+        } else {
+          const buttons = document.querySelectorAll(".remove-review");
+          buttons.forEach((btn) => (btn.style.display = "none"));
+        }
+      }
+
+      // Save reviews to localStorage
+      function saveReviewsArray(reviews) {
+        localStorage.setItem("eurekaReviews", JSON.stringify(reviews));
+      }
+
+      // Add review to DOM with remove button (always present, but hidden for non-admin)
+      function addReviewToDOM(name, text, idx) {
+        const newReview = document.createElement("div");
+        newReview.classList.add("review-item");
+        newReview.innerHTML = `
       <strong>${name}</strong>
       <p>${text}</p>
       <button class="remove-review" data-idx="${idx}" title="Remove review" style="display:none;">Remove</button>
     `;
-    reviewsList.appendChild(newReview);
-    setTimeout(() => newReview.classList.add('show'), 100);
-  }
+        reviewsList.appendChild(newReview);
+        setTimeout(() => newReview.classList.add("show"), 100);
+      }
 
-  // Form submit
-  reviewForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const reviewText = reviewInput.value.trim();
-    const nameText = reviewName.value.trim() || 'Anonymous';
-    if(reviewText) {
-      const saved = localStorage.getItem('eurekaReviews');
-      const reviews = saved ? JSON.parse(saved) : [];
-      reviews.push({ name: nameText, text: reviewText });
-      saveReviewsArray(reviews);
-      addReviewToDOM(nameText, reviewText, reviews.length - 1);
-      reviewInput.value = '';
-      reviewName.value = '';
-      loadReviews();
-    }
-  });
+      // Form submit
+      reviewForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const reviewText = reviewInput.value.trim();
+        const nameText = reviewName.value.trim() || "Anonymous";
+        if (reviewText) {
+          const saved = localStorage.getItem("eurekaReviews");
+          const reviews = saved ? JSON.parse(saved) : [];
+          reviews.push({ name: nameText, text: reviewText });
+          saveReviewsArray(reviews);
+          addReviewToDOM(nameText, reviewText, reviews.length - 1);
+          reviewInput.value = "";
+          reviewName.value = "";
+          loadReviews();
+        }
+      });
 
-  // Remove review handler (only admin can delete)
-  reviewsList.addEventListener('click', function(e) {
-    if (e.target.classList.contains('remove-review') && isAdmin) {
-      const idx = parseInt(e.target.getAttribute('data-idx'));
-      const saved = localStorage.getItem('eurekaReviews');
-      let reviews = saved ? JSON.parse(saved) : [];
-      reviews.splice(idx, 1);
-      saveReviewsArray(reviews);
-      loadReviews();
-    }
-  });
+      // Remove review handler (only admin can delete)
+      reviewsList.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-review") && isAdmin) {
+          const idx = parseInt(e.target.getAttribute("data-idx"));
+          const saved = localStorage.getItem("eurekaReviews");
+          let reviews = saved ? JSON.parse(saved) : [];
+          reviews.splice(idx, 1);
+          saveReviewsArray(reviews);
+          loadReviews();
+        }
+      });
 
-  // Admin login prompt
-  function adminLogin() {
-    const input = prompt("Enter admin password:");
-    if (input === ADMIN_PASSWORD) {
-      isAdmin = true;
-      loadReviews();
-      alert("Admin mode enabled. You can now remove reviews.");
-    } else {
-      alert("Incorrect password.");
-    }
-  }
-
-  // Add admin login button
-  const adminBtn = document.createElement('button');
-  adminBtn.textContent = "Admin Login";
-  adminBtn.style.margin = "20px";
-  adminBtn.style.background = "#0077b6";
-  adminBtn.style.color = "#fff";
-  adminBtn.style.border = "none";
-  adminBtn.style.borderRadius = "6px";
-  adminBtn.style.padding = "10px 18px";
-  adminBtn.style.cursor = "pointer";
-  adminBtn.onclick = adminLogin;
-  document.getElementById('reviewSection').prepend(adminBtn);
-
-  // Intersection Observer with staggered animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        if(entry.target.classList.contains('review-item')) {
-          const items = document.querySelectorAll('.review-item');
-          items.forEach((item, index) => {
-            setTimeout(() => item.classList.add('show'), index * 200);
-          });
+      // Admin login prompt
+      function adminLogin() {
+        const input = prompt("Enter admin password:");
+        if (input === ADMIN_PASSWORD) {
+          isAdmin = true;
+          loadReviews();
+          alert("Admin mode enabled. You can now remove reviews.");
         } else {
-          entry.target.classList.add('show');
+          alert("Incorrect password.");
         }
       }
-    });
-  }, { threshold: 0.2 });
 
-  document.querySelectorAll('.review, .review-form').forEach(el => {
-    observer.observe(el);
-  });
+      // Add admin login button
+      const adminBtn = document.createElement("button");
+      adminBtn.textContent = "Admin Login";
+      adminBtn.style.margin = "20px";
+      adminBtn.style.background = "#0077b6";
+      adminBtn.style.color = "#fff";
+      adminBtn.style.border = "none";
+      adminBtn.style.borderRadius = "6px";
+      adminBtn.style.padding = "10px 18px";
+      adminBtn.style.cursor = "pointer";
+      adminBtn.onclick = adminLogin;
+      document.getElementById("reviewSection").prepend(adminBtn);
 
-  // Load reviews on page load
-  loadReviews();
-</script>
+      // Intersection Observer with staggered animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains("review-item")) {
+                const items = document.querySelectorAll(".review-item");
+                items.forEach((item, index) => {
+                  setTimeout(() => item.classList.add("show"), index * 200);
+                });
+              } else {
+                entry.target.classList.add("show");
+              }
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
 
-<script>
-    // Paneflow text effect
+      document.querySelectorAll(".review, .review-form").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Load reviews on page load
+      loadReviews();
+    </script>
+
+    <script>
+      // Paneflow text effect
       const texts = document.querySelectorAll(".paneflow-text");
       let index = 0;
       function showNextText() {
@@ -465,64 +548,62 @@ startTypingLoop();
       }
       showNextText();
       setInterval(showNextText, 3000);
-</script>
+    </script>
 
-<script>
-const text = "Follow us on social media!";
-const typingText = document.getElementById('typing-text');
-const typedContent = document.getElementById('typed-content');
-let indexs = 0;
+    <script>
+      const text = "Follow us on social media!";
+      const typingText = document.getElementById("typing-text");
+      const typedContent = document.getElementById("typed-content");
+      let indexs = 0;
 
-function type() {
-  if (indexs < text.length) {
-    typedContent.textContent += text.charAt(indexs);
-    indexs++;
-    typedContent.style.borderRight = 'none';
-    typedContent.style.caretColor = 'transparent';
-    setTimeout(type, 100);
-  } else {
-    removeStars();
-    createStars();
-    setTimeout(() => {
-      typedContent.textContent = '';
-      indexs = 0;
-      removeStars();
+      function type() {
+        if (indexs < text.length) {
+          typedContent.textContent += text.charAt(indexs);
+          indexs++;
+          typedContent.style.borderRight = "none";
+          typedContent.style.caretColor = "transparent";
+          setTimeout(type, 100);
+        } else {
+          removeStars();
+          createStars();
+          setTimeout(() => {
+            typedContent.textContent = "";
+            indexs = 0;
+            removeStars();
+            type();
+          }, 4200);
+        }
+      }
+
+      function createStars() {
+        const numStars = 30;
+        // Get the width and left offset of the typed text
+        const textWidth = typedContent.offsetWidth;
+        const textHeight = typedContent.offsetHeight;
+        const parentWidth = typingText.offsetWidth;
+        const leftOffset = (parentWidth - textWidth) / 2;
+
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement("span");
+          star.classList.add("star");
+          star.innerHTML = "✦";
+          star.style.color = "#FFD700";
+          star.style.position = "absolute";
+          // Center stars above the text
+          star.style.left = leftOffset + Math.random() * textWidth + "px";
+          star.style.top = Math.random() * textHeight + "px";
+          star.style.fontSize = "10px";
+          typingText.appendChild(star);
+        }
+        typingText.style.position = "relative";
+      }
+
+      function removeStars() {
+        const stars = typingText.querySelectorAll(".star");
+        stars.forEach((star) => star.remove());
+      }
+
       type();
-    }, 4200);
-  }
-}
-
-function createStars() {
-  const numStars = 30;
-  // Get the width and left offset of the typed text
-  const textWidth = typedContent.offsetWidth;
-  const textHeight = typedContent.offsetHeight;
-  const parentWidth = typingText.offsetWidth;
-  const leftOffset = (parentWidth - textWidth) / 2;
-
-  for (let i = 0; i < numStars; i++) {
-    const star = document.createElement('span');
-    star.classList.add('star');
-    star.innerHTML = '✦';
-    star.style.color = '#FFD700';
-    star.style.position = 'absolute';
-    // Center stars above the text
-    star.style.left = leftOffset + Math.random() * textWidth + 'px';
-    star.style.top = Math.random() * textHeight + 'px';
-    star.style.fontSize = '10px';
-    typingText.appendChild(star);
-  }
-  typingText.style.position = 'relative';
-}
-
-function removeStars() {
-  const stars = typingText.querySelectorAll('.star');
-  stars.forEach(star => star.remove());
-}
-
-type();
-</script>
-
-    
-</body>
+    </script>
+  </body>
 </html>
