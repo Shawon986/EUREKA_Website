@@ -123,6 +123,7 @@ body {
     display: flex;
     align-items: center;
   }
+  
 }
 
     /* Moving stars canvas */
@@ -334,6 +335,8 @@ body {
 
     .team-section {
       text-align: center;
+      
+        
     }
 
     .team-grid {
@@ -341,6 +344,7 @@ body {
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
       margin-top: 40px;
+      
     }
 
     .team-member {
@@ -349,6 +353,20 @@ body {
       border-radius: 15px;
       backdrop-filter: blur(6px);
       transition: transform 0.3s ease;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      
+    }
+    .team-member img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
     }
 
     .team-member:hover {
@@ -358,6 +376,35 @@ body {
     .team-member h3 {
       margin-top: 15px;
       color: #f39c12;
+    }
+
+    .team-member p {
+      color: #e6e6e6;
+      font-size: 0.95rem;
+      margin: 0 10px 12px;
+      text-align: center;
+    }
+
+    
+
+    /* Mobile */
+    @media (max-width: 768px) {
+  
+       .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+       }
+       .team-member img {
+        height: auto;
+       }
+       .team-section h2.section-title {
+        font-size: 1.8rem;
+       }
+       
+     
     }
 
     .contact-section form {
